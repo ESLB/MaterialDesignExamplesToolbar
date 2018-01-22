@@ -7,7 +7,9 @@
     tools:context="com.pruebas.elsve.materialdesignexamples.MainActivity">
 
 
-    <include layout="@layout/toolbar"/>
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
 
     <TextView
         android:layout_width="wrap_content"
