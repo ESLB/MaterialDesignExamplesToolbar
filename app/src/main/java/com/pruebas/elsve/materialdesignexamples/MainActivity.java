@@ -1,6 +1,7 @@
 package com.pruebas.elsve.materialdesignexamples;
 
 import android.os.Build;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.pruebas.elsve.materialdesignexamples.Drawer.DrawerFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Hola");
         toolbar.setSubtitle("Cómo estás?");
-
+        setUpDrawer();
         //Compatibility by Java
 
 //        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP){
@@ -64,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        });
+    }
+
+    private void setUpDrawer() {
+        DrawerFragment drawerFragment = (DrawerFragment) getSupportFragmentManager().findFragmentById(R.id.drawer_fragment);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        drawerFragment.setUpDrawer(R.id.drawer_fragment, drawerLayout, toolbar);
     }
 
     @Override
